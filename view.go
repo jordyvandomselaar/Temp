@@ -1,4 +1,4 @@
-package Temp
+package temp
 
 import "io/ioutil"
 
@@ -7,12 +7,8 @@ type View struct {
 }
 
 // Parse a view.
-func (v View) Parse() []byte {
+func (v View) Parse() ([]byte, error) {
 	html, err := ioutil.ReadFile(v.Path)
 
-	if err != nil {
-		panic(err)
-	}
-
-	return html
+	return html, err
 }
