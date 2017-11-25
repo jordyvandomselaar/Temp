@@ -2,6 +2,8 @@
 
 _A modern templating engine for Go._
 
+[![Codetree](https://codetree.com/images/managed-with-codetree.svg)](https://codetree.com/projects/oWLQ)
+
 ## What is this?
 
 A templating engine for Go. It's inspired by the likes of Laravel's Blade.
