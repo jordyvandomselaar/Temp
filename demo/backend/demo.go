@@ -2,7 +2,7 @@ package main
 
 import (
 	"fmt"
-	"github.com/jordyvandomselaar/Temp"
+	"github.com/jordyvandomselaar/temp"
 	"net/http"
 	"os"
 	"path"
@@ -25,9 +25,15 @@ func indexHandler(w http.ResponseWriter, _ *http.Request) {
 		panic(err)
 	}
 
-	view := Temp.View{
+	view := temp.View{
 		Path: path.Join(currentScriptDir, "frontend/index.temp.html"),
 	}
 
-	fmt.Fprint(w, string(view.Parse()))
+	html, err := view.Parse()
+
+	if err != nil {
+		panic(err)
+	}
+
+	fmt.Fprint(w, html)
 }
